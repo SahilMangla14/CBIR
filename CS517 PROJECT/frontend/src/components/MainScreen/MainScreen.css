@@ -1,0 +1,11 @@
+.mainscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    /* border: 2px solid green; */
+    height: 92%;
+    width: 92%;
+}
