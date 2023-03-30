@@ -307,7 +307,7 @@ const ImageUpload = () => {
                                     >
                                         Choose File
                                     </button>
-                                    <input id="file" type="file" hidden="" />
+                                    <input id="file" type="file" hidden=""/>
                                 </div>
                                 <div className="myModal__actions" hidden="">
                                     <svg
