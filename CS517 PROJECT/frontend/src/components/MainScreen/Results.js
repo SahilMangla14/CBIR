@@ -15,7 +15,7 @@ const Results = () => {
         console.log(data)
       })
       .catch(error => console.error(error));
-  }, [])
+  },[])
 
   useEffect(() => {
     fetch('http://localhost:5000/getQueryImg')
@@ -42,9 +42,11 @@ const Results = () => {
         <img src={`http://localhost:5000/static/queries/${queryName}`} alt="query" className='query-image'/>
       </div>
       <div className="gallery">
+        {console.log(imageNames)}
         {imageNames.map(filename => (
           <div className='image-container'>
             <img key={filename} src={`http://localhost:5000/static/${filename}`} alt={filename} className="gallery__image" />
+            {console.log(filename)}
           </div>
         ))}
       </div>

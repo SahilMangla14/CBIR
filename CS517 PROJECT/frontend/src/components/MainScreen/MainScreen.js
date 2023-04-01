@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import './ImageUpload.js'
 import ImageUpload from './ImageUpload.js';
 import Results from './Results'
+import { useEffect } from 'react';
 
 function MainScreen() {
   return (

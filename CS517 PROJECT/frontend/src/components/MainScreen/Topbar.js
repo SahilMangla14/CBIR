@@ -23,30 +23,38 @@ function CollapsibleExample() {
             {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
             <NavDropdown title={name} id="collasible-nav-dropdown">
               <NavDropdown.Item  onClick={(event) => {
-                window.location.reload();
-                setName('Color Based')
+                // window.location.reload();
+                event.preventDefault();
+                setName('COLOR')
                 fetch('http://localhost:5000/color',{
                   method: 'POST',
                   body: 'Color',
                   mode: 'cors',
                 }).then((res)=>res.json).then((res)=>console.log(res))
                 
-              }}>Color Based</NavDropdown.Item>
+              }}>COLOR</NavDropdown.Item>
               <NavDropdown.Item  onClick={(event) => {
-                window.location.reload();
-                setName('Feature Based')
+                // window.location.reload();
+                event.preventDefault();
+                setName('VGG')
                 fetch('http://localhost:5000/vgg',{
                   method: 'POST',
-                  body: 'Feature',
+                  body: 'VGG',
                   mode: 'cors',
                 }).then((res)=>res.json).then((res)=>console.log(res))
               }}>
-                Feature Based
+                VGG
               </NavDropdown.Item>
               <NavDropdown.Item onClick={(event) => { 
-                window.location.reload();
-                setName('Texture Based')
-              }}>Texture Based</NavDropdown.Item>
+                // window.location.reload();
+                event.preventDefault()
+                setName('RESNET')
+                fetch('http://localhost:5000/resnet',{
+                  method: 'POST',
+                  body: 'RESNET',
+                  mode: 'cors',
+                }).then((res)=>res.json).then((res)=>console.log(res))
+              }}>RESNET</NavDropdown.Item>
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link
@@ -54,7 +62,7 @@ function CollapsibleExample() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">About Project</Nav.Link>
+            <Nav.Link href="#about">About Project</Nav.Link>
             {/* <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link> */}
