@@ -21,15 +21,15 @@ function CollapsibleExample() {
             {/* <Nav.Link href="#features">Features</Nav.Link> */}
             {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
             <NavDropdown title={name} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1" onClick={() => {
+              <NavDropdown.Item onClick={() => {
                 setName('Color Based')
               }}>Color Based</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" onClick={() => {
+              <NavDropdown.Item onClick={() => {
                 setName('Feature Based')
               }}>
                 Feature Based
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3" onClick={() => {
+              <NavDropdown.Item onClick={() => {
                 setName('Texture Based')
               }}>Texture Based</NavDropdown.Item>
               {/* <NavDropdown.Divider />
