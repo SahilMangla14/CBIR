@@ -4,7 +4,9 @@ import shutil
 import os
 from vgg import run_vgg
 from color import run_color
+from resnet import run_resnet
 from flask_cors import CORS, cross_origin
+
 app = Flask(__name__)
 CORS(app)
 
@@ -51,7 +53,24 @@ def run_Color():
          print(f'Failed to delete {file_path}. Reason: {e}')
    run_color()
    return response
-    
+
+@app.route('/resnet', methods=['POST'])
+def run_Resnet():
+   response = jsonify({"msg": "This has CORS enabled 🎈"})
+   # response.headers.add('Access-Control-Allow-Origin', '*')
+   folder_path='./static'
+   for filename in os.listdir(folder_path):
+      file_path = os.path.join(folder_path, filename)
+      try:
+         if os.path.isfile(file_path):
+            os.unlink(file_path)
+         elif os.path.isdir(file_path): 
+            os.rmdir(file_path)
+      except Exception as e:
+         print(f'Failed to delete {file_path}. Reason: {e}')
+   run_resnet()
+   return response
+
 @app.route('/images', methods = ['GET'])
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def get_images():
