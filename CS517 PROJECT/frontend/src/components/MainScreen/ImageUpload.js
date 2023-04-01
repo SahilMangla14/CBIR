@@ -1,12 +1,16 @@
 import React from 'react'
 import './ImageUpload.css'
+// import axios from 'axios'
+
 
 const ImageUpload = () => {
+    
+    const data=new FormData();
 
     window.addEventListener("DOMContentLoaded", () => {
         const upload = new UploadmyModal("#upload");
     });
-
+    
     class UploadmyModal {
         filename = "";
         isCopying = false;
@@ -14,7 +18,7 @@ const ImageUpload = () => {
         progress = 0;
         progressTimeout = null;
         state = 0;
-
+        
         constructor(el) {
             this.el = document.querySelector(el);
             this.el?.addEventListener("click", this.action.bind(this));
@@ -80,6 +84,11 @@ const ImageUpload = () => {
                         this.fileDisplay(target.files[0].name);
                     };
                     reader.readAsDataURL(target.files[0]);
+                    data.append("files", target.files[0]);
+                    
+                    // console.log(...data);
+                    // console.log(URL.createObjectURL(target.files[0]));
+                    // console.log(target.files[0].name)
                 }
             });
         }
@@ -140,8 +149,15 @@ const ImageUpload = () => {
                 this.progress = 0;
                 this.state = 1;
                 this.progressLoop();
+                fetch('http://localhost:5000/query',{
+                    method: 'POST',
+                    body: data,
+                    mode: 'cors'
+                }).then((res)=>res.json).then((res)=>console.log(res))
             }
         }
+
+        
     }
 
     class Utils {
@@ -300,14 +316,14 @@ const ImageUpload = () => {
                                     Select a file to upload from your computer or device.
                                 </p>
                                 <div className="myModal__actions">
-                                    <button
+                                    {/* <button
                                         className="myModal__button myModal__button--upload"
                                         type="button"
                                         data-action="file"
                                     >
-                                        Choose File
-                                    </button>
-                                    <input id="file" type="file" hidden=""/>
+                                        choose file
+                                    </button> */}
+                                    <input id="file" type="file" hidden="" className="myModal__button myModal__button--upload"/>
                                 </div>
                                 <div className="myModal__actions" hidden="">
                                     <svg
