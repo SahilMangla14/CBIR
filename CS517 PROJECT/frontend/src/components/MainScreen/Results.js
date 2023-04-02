@@ -25,7 +25,7 @@ const Results = () => {
         console.log(data)
       })
       .catch(error => console.log(error))
-  },[])
+  },[]) 
 
   // return (
   //     {imageNames.map(filename => (

@@ -30,7 +30,14 @@ function CollapsibleExample() {
                   method: 'POST',
                   body: 'Color',
                   mode: 'cors',
-                }).then((res)=>res.json).then((res)=>console.log(res))
+                }).then((res)=>res.json).then((res)=>console.log(res)).then(data => {
+                  // Handle fetched data here
+                  console.log(data);
+                  // Reload window after 5 seconds
+                  setTimeout(() => {
+                    window.location.reload();
+                  },0);
+                })
                 
               }}>COLOR</NavDropdown.Item>
               <NavDropdown.Item  onClick={(event) => {
@@ -41,7 +48,14 @@ function CollapsibleExample() {
                   method: 'POST',
                   body: 'VGG',
                   mode: 'cors',
-                }).then((res)=>res.json).then((res)=>console.log(res))
+                }).then((res)=>res.json).then((res)=>console.log(res)).then(data => {
+                  // Handle fetched data here
+                  console.log(data);
+                  // Reload window after 5 seconds
+                  setTimeout(() => {
+                    window.location.reload();
+                  },0);
+                })
               }}>
                 VGG
               </NavDropdown.Item>
@@ -53,7 +67,14 @@ function CollapsibleExample() {
                   method: 'POST',
                   body: 'RESNET',
                   mode: 'cors',
-                }).then((res)=>res.json).then((res)=>console.log(res))
+                }).then((res)=>res.json).then((res)=>console.log(res)).then(data => {
+                  // Handle fetched data here
+                  console.log(data);
+                  // Reload window after 5 seconds
+                  setTimeout(() => {
+                    window.location.reload();
+                  },0);
+                })
               }}>RESNET</NavDropdown.Item>
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
