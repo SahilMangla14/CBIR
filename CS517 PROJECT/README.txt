@@ -5,7 +5,8 @@ Backend runs the appropriate functions to achieve result of any particular metho
 
 To run the frontend/website, run the commands:
     cd frontend
-    npm install
+    npm install 
+    npm install --force   // if normal install doesnt work
     npm start
 To run the python files in backend, install the following libraries:
     open-cv
